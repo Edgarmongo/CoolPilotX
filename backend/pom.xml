@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>4.0.8</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>com.coolpilotx</groupId>
+  <artifactId>coolpilotx-backend</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>CoolPilotX Backend</name>
+  <description>企业融资准备与分析系统 · 核心业务平台</description>
+
+  <modules>
+    <module>cpx-common</module>
+    <module>cpx-identity</module>
+    <module>cpx-customer</module>
+    <module>cpx-case</module>
+    <module>cpx-authorization</module>
+    <module>cpx-evidence</module>
+    <module>cpx-document</module>
+    <module>cpx-data</module>
+    <module>cpx-finance</module>
+    <module>cpx-analysis</module>
+    <module>cpx-assessment</module>
+    <module>cpx-review</module>
+    <module>cpx-report</module>
+    <module>cpx-ai</module>
+    <module>cpx-knowledge</module>
+    <module>cpx-audit</module>
+    <module>cpx-infrastructure</module>
+    <module>cpx-web</module>
+    <module>cpx-boot</module>
+  </modules>
+
+  <properties>
+    <java.version>21</java.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <version>4.0.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

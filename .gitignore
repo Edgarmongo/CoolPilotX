@@ -1,0 +1,53 @@
+# ---------- Frontend ----------
+node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/*.local
+
+# ---------- Java / Maven ----------
+target/
+**/target/
+.mvn/wrapper/maven-wrapper.jar
+# 机器相关的本地仓库路径，不得提交
+.mvn/maven.config
+**/.mvn/maven.config
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+ai-service/models/
+ai-service/.cache/
+
+# ---------- 本地配置与密钥 ----------
+.env
+.env.*
+!.env.example
+*.env
+!*.env.example
+*.local
+
+# ---------- 运行时数据（客户资料，绝不入库） ----------
+storage/documents/*
+storage/reports/*
+storage/temporary/*
+storage/backups/*
+!storage/**/.gitkeep
+backend/*/data/
+
+# ---------- IDE 与系统 ----------
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ---------- 日志与临时 ----------
+*.log
+logs/
+tmp/

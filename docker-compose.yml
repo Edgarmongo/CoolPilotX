@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: cpx-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${CPX_DB_NAME:-coolpilotx}
+      POSTGRES_USER: ${CPX_DB_USER:-cpx_app}
+      POSTGRES_PASSWORD: ${CPX_DB_PASSWORD:?需要设置 CPX_DB_PASSWORD}
+      TZ: UTC
+      PGTZ: UTC
+    ports:
+      # 只绑定本机，避免暴露到局域网
+      - "127.0.0.1:${CPX_DB_PORT:-5432}:5432"
+    volumes:
+      - cpx-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${CPX_DB_USER:-cpx_app} -d ${CPX_DB_NAME:-coolpilotx}"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+      start_period: 20s
+
+  # backend 与 ai-service 的镜像尚未构建。
+  # 按 CPX-MVP-01 的里程碑 0 完成后，再补 Dockerfile 与以下服务定义。
+
+volumes:
+  cpx-pgdata:
